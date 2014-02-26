@@ -1,9 +1,7 @@
 import java.util.ArrayList;
 
 
-public class Dealer {
-
-	private ArrayList<Card> hand; //holds the dealer's hand
+public class Dealer extends BlackJackPlayer {
 	private Deck theDeck;
 	private Card x;
 	private int handTotal; //contains the sum of hand

@@ -2,14 +2,13 @@ import java.util.ArrayList;
 import java.util.Random;
 public class Deck {
 
-    public Card[] deck;   // An array of 52 Cards, representing the deck.
+    public Card[] deck;
     private ArrayList<Card> a  = new ArrayList<Card>();
     private static ArrayList<Card> b = new ArrayList<Card>();
     private ArrayList<Card> c = new ArrayList<Card>();
     private Card topCard;
     
     public Deck() {
-         //unshuffled deck
 		//Fill array list with numbers from 1 to 52
 		  for (int copy=0; copy<4; copy++){
 			  for (int number = 0; number < 13; number++){

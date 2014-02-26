@@ -15,7 +15,7 @@ public class Money {
 	private double nextBet;
 	private boolean win;
 	private boolean tie = false;
-	private Game theGame;
+	private BlackJackGame theGame;
 
 
 	
@@ -80,7 +80,7 @@ public class Money {
 	
 	public void winLose(){
 		//determine how to allocate money
-		theGame = new Game();
+		theGame = new BlackJackGame();
 		tie = theGame.getTie();
 		
 		if (tie){
@@ -107,7 +107,7 @@ public class Money {
 	} // end winLose
 	
 	public void winLose2(){
-		theGame = new Game();
+		theGame = new BlackJackGame();
 		tie = theGame.getTie();
 		
 		if (tie){
@@ -141,7 +141,7 @@ public class Money {
 	
 	public void payDouble(){
 		//method to determine allocations if player double downs
-		theGame = new Game();
+		theGame = new BlackJackGame();
 		win = theGame.whoWon();
 		tie = theGame.getTie();
 		

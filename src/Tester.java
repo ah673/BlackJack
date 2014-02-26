@@ -1,7 +1,7 @@
 //***********************************
  //* 
  //* This is the tester class for a 
- //* a Black Jack Game
+ //* a Black Jack BlackJackGame
  //*
  //* Written by Amy Ho 
  //* (UNI: ah2703)
@@ -15,7 +15,7 @@ public class Tester {
 		Money moneyObject = new Money();		
 		moneyObject.buyCoins();
 		
-		Game g = new Game();
+		BlackJackGame g = new BlackJackGame();
 		g.play();
 		
 	}
