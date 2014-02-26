@@ -7,10 +7,10 @@ public class Card {
 		SIX, SEVEN, EIGHT, NINE, TEN,
 		JACK, QUEEN, KING
 	}
-	  
-    public Card(Face cardFace) {
-        this.cardFace = cardFace;
-    }
+	
+	public Card(Face cardFace) {
+		this.cardFace = cardFace;
+	}
         
 
 }
