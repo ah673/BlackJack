@@ -20,22 +20,16 @@ public class Shoe {
 		for (Card.Face cardFace : Card.Face.values())
 			cards.add(new Card(cardFace));
 	}
-
-	public List<Card> shuffle() {	
-       Collections.shuffle(cards); 
-       return cards;
-    }
-    
-    public void copyAL() {
-    	//will copy a to c since a will be deleted
-    	for (int i=0; i<a.size(); i++){
-            c.add(a.get(i));
-            }
-    }
-    
-    public int cardsLeft() {
-    	return cards.size();
-    }
+	
+	public List<Card> shuffle() {
+		Collections.shuffle(cards);
+		return cards;	
+	}
+	
+	public int cardsLeft() {
+		return cards.size();
+		
+	}
     
 
     public Card dealCard(){
