@@ -9,9 +9,9 @@ public class InputReceiver {
 	Scanner scanner = new Scanner(System.in); 
 	Writer microphone = new BufferedWriter(new OutputStreamWriter(System.out));
 	
-	public void say (String message){
+	public void say (Object message){
 		try {
-			microphone.write(message); 
+			microphone.write(message.toString()); 
 			microphone.flush(); 
 		} catch (IOException e){
 			System.err.println(e); 
