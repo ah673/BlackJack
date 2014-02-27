@@ -1,57 +1,10 @@
-import java.util.ArrayList;
-
+import java.util.*;
 
 public class Dealer extends BlackJackPlayer {
-	private Deck theDeck;
-	private Card x;
-	private int handTotal; //contains the sum of hand
-	private boolean BlackJack; //did Dealer get Black Jack?
+	List<Card> hand; 
 	
-	public void play(){
-		
-		theDeck = new Deck();
-		
-		//an array list to contain the Cards in dealt
+	public Dealer(){
 		hand = new ArrayList<Card>();
-		
-		//initially deal 2 cards and add to array list;
-		for (int i = 0; i<2; i++){
-			x = theDeck.dealCard();
-			hand.add(x);
-		}
-		handTotal = sumCards();
-		for (int i = 1; i<hand.size(); i++){
-			System.out.println("Dealer's hand: x, "  +hand.get(i)); 
-			//first card is not revealed
-		}
-
-	}
-	
-	public boolean getBlackJack() {
-		//Checks to see if initial hand contains BlackJack
-		if (handTotal == 21){
-			BlackJack = true;
-		}
-		else
-			BlackJack = false;
-		
-		return BlackJack;		
-	} //end blackJack
-	
-	public void action(){
-		//Dealer hits on all hand sums lower than 16
-		while (handTotal <= 16){
-			x = theDeck.dealCard();
-			hand.add(x);
-			handTotal = sumCards();
-		}
-		System.out.println("Dealer's hand:" + hand);
-		System.out.println("Total: " +handTotal);
-			
-	}
-	
-	public int getTotal(){
-		return handTotal;
 	}
 
 	
@@ -83,11 +36,5 @@ public class Dealer extends BlackJackPlayer {
 		return sum;
 
 		}
-
-	
-	/*public Card hit(){
-		x = theDeck.dealCard();
-		return x;
-	}*/
 	
 } // end class

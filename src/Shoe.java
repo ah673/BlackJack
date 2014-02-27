@@ -3,13 +3,13 @@ import java.util.Collections;
 import java.util.List;
 public class Shoe {
 	
-	protected List<Card> cards = new ArrayList<Card>();
-    
-	public Shoe() {
-		makeDeck();
+	protected List<Card> cards = new ArrayList<Card>(); 
+	
+	public Shoe(){
+		makeDecks(); 
 	}
 	
-	private void makeDeck() {
+	private void makeDecks() {
 		for (int i = 0; i < Card.NUM_OF_SUITS; i++){
 			insertEachSuitIntoDeck();
 		}	
@@ -17,7 +17,7 @@ public class Shoe {
 	
 	private void insertEachSuitIntoDeck() {
 		for (Card.Face cardFace : Card.Face.values())
-			cards.add(new Card(cardFace));
+			cards.add(new BlackJackCard(cardFace));
 	}
 	
 	public List<Card> shuffle() {
