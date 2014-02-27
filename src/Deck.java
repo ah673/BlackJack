@@ -2,21 +2,22 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 public class Deck {
-
-    protected List<Card> cards = new ArrayList<Card>();
+	
+	protected List<Card> cards = new ArrayList<Card>();
     
-    public Deck() {
-    	makeDeck(); 
-    }
-    
-    private void makeDeck() {
-		for (int i = 0; i < Card.NUM_OF_SUITS; i++)
-			insertEachSuitIntoDeck(); 
+	public Deck() {
+		makeDeck();
 	}
-
+	
+	private void makeDeck() {
+		for (int i = 0; i < Card.NUM_OF_SUITS; i++){
+			insertEachSuitIntoDeck();
+		}	
+	}
+	
 	private void insertEachSuitIntoDeck() {
 		for (Card.Face cardFace : Card.Face.values())
-			cards.add(new Card(cardFace)); 
+			cards.add(new Card(cardFace));
 	}
 
 	public void shuffle() {
