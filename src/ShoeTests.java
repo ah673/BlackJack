@@ -16,9 +16,9 @@ public class ShoeTests {
 	@Test
 	public void deckContainsOneLessCardAfterDeal(){
 		Shoe shoe = new Shoe();
-		int sizeBefore = shoe.cardsLeft(); 
+		int cardsBeforeDealing = shoe.cardsLeft(); 
 		shoe.dealCard();
-		int sizeAfter = shoe.cardsLeft(); 
-		assertThat(sizeAfter, is(sizeBefore - 1)); 
+		int cardsAfterDealing = shoe.cardsLeft(); 
+		assertThat(cardsAfterDealing, is(cardsBeforeDealing - 1)); 
 	}
 }
