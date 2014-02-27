@@ -25,11 +25,6 @@ public class Shoe {
 		return cards;	
 	}
 	
-	public int cardsLeft() {
-		return cards.size();
-		
-	}
-	
 	public Card dealCard(){ 
 		Card topCard = cards.remove(0);
 		return topCard; 
