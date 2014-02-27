@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-public class Deck {
+public class Shoe {
 	
 	protected List<Card> cards = new ArrayList<Card>();
     
-	public Deck() {
+	public Shoe() {
 		makeDeck();
 	}
 	
@@ -20,22 +21,10 @@ public class Deck {
 			cards.add(new Card(cardFace));
 	}
 
-	public void shuffle() {
-    	b.clear();
-    	copyAL(); // copies 
-    	Random numGenerator = new Random();
-    	
-    	int p =52;
-        for (int i=51; i>=0; i--) {
-                int rand = numGenerator.nextInt(p);
-                Card temp = c.remove(rand); //removes the card 
-                							//at the randomly generated index
-                b.add(temp);				//and adds it to b ensuring no repeats
-                p--;						// of more than 4 copies.
-        }
-        
-        
-    }// end shuffle
+	public List<Card> shuffle() {	
+       Collections.shuffle(cards); 
+       return cards;
+    }
     
     public void copyAL() {
     	//will copy a to c since a will be deleted
@@ -63,4 +52,4 @@ public class Deck {
 
     
 
-} // end class Deck
+} // end class Shoe
