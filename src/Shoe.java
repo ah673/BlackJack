@@ -30,20 +30,10 @@ public class Shoe {
 		return cards.size();
 		
 	}
-    
-
-    public Card dealCard(){
-    	if (cardsLeft()<=12){
-    		shuffle();
-    	}
-		topCard = b.get(0);
-		b.remove(0);
-		//will keep returning the top card when 
-		//called because the first element of the array is always removed
-		return topCard;
+	
+	public Card dealCard(){ 
+		Card topCard = cards.remove(0);
+		return topCard; 
 	}
-    
 
-    
-
-} // end class Shoe
+}
