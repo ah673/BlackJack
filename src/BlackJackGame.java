@@ -1,20 +1,29 @@
-import java.util.List;
+import java.util.*;
 
 public class BlackJackGame {
-	public static final int WIN_VALUE = 21; 
-	private BlackJackPlayer human; 
+	private static final int WIN_VALUE = 21; 
+	private static final int INITIAL_HAND_SIZE = 2; 
+	
+	protected BlackJackPlayer human; 
 	private BlackJackPlayer dealer;  
 	private Shoe shoe;
 	
 	public BlackJackGame() {
-		human = new Player();
 		dealer = new Dealer();
+		human = new Player();
 		shoe = new Shoe();
+		
 	}
 	
 	public void startGame(){
-		dealCardTo(dealer);
-		dealCardTo(human);
+		dealInitialTwoCards();
+	}
+
+	private void dealInitialTwoCards() {
+		for (int i = 0; i < INITIAL_HAND_SIZE; i++){
+			dealCardTo(dealer);
+			dealCardTo(human);
+		}
 	}
 
 	private void dealCardTo(BlackJackPlayer recipient) {
@@ -30,7 +39,7 @@ public class BlackJackGame {
 		return valueOfHand; 
 	}
 	
-	public boolean isHandBust(List<Card> hand){
+	public static boolean isHandBust(List<Card> hand){
 		if (minValueOf(hand) > WIN_VALUE)
 			return true; 
 		return false;
