@@ -1,6 +1,7 @@
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertThat;
 
-import static org.hamcrest.collection.IsCollectionWithSize.hasSize;
 import org.junit.Test;
 
 public class DeckTests {
@@ -9,6 +10,6 @@ public class DeckTests {
 	@Test
 	public void startingDeckHas52Cards(){
 		Deck deck = new Deck(); 
-		assertThat(deck.deck, hasSize(TOTAL_CARDS_PER_DECK)); 
+		assertThat(deck.cards, hasSize(TOTAL_CARDS_PER_DECK)); 
 	}
 }
