@@ -1,24 +1,25 @@
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 public class Deck {
 
-    public Card[] deck;
-    private ArrayList<Card> a  = new ArrayList<Card>();
-    private static ArrayList<Card> b = new ArrayList<Card>();
-    private ArrayList<Card> c = new ArrayList<Card>();
-    private Card topCard;
+    protected List<Card> cards = new ArrayList<Card>();
     
     public Deck() {
-		//Fill array list with numbers from 1 to 52
-		  for (int copy=0; copy<4; copy++){
-			  for (int number = 0; number < 13; number++){
-	            a.add(new Card(number+1));
-	            }
-
-		  }
+    	makeDeck(); 
     }
     
-    public void shuffle() {
+    private void makeDeck() {
+		for (int i = 0; i < Card.NUM_OF_SUITS; i++)
+			insertEachSuitIntoDeck(); 
+	}
+
+	private void insertEachSuitIntoDeck() {
+		for (Card.Face cardFace : Card.Face.values())
+			cards.add(new Card(cardFace)); 
+	}
+
+	public void shuffle() {
     	b.clear();
     	copyAL(); // copies 
     	Random numGenerator = new Random();
@@ -43,7 +44,7 @@ public class Deck {
     }
     
     public int cardsLeft() {
-    	return b.size();
+    	return cards.size();
     }
     
 
