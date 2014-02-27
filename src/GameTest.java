@@ -14,4 +14,26 @@ public class GameTest {
 		
 		assertEquals(handBusted, false); 
 	}
+	
+	@Test
+	public void AceKingKingHand_NotBust(){
+		List<Card> aceKingKingHand = new ArrayList<Card>();
+		aceKingKingHand.add(new BlackJackCard(Card.Face.ACE));
+		aceKingKingHand.add(new BlackJackCard(Card.Face.KING));
+		aceKingKingHand.add(new BlackJackCard(Card.Face.KING));
+		boolean handBusted = BlackJackGame.isHandBust(aceKingKingHand); 
+		
+		assertEquals(handBusted, false); 
+	}
+	
+	@Test
+	public void JackJackJackHand_Busted(){
+		List<Card> jjjHand = new ArrayList<Card>();
+		jjjHand.add(new BlackJackCard(Card.Face.JACK));
+		jjjHand.add(new BlackJackCard(Card.Face.JACK));
+		jjjHand.add(new BlackJackCard(Card.Face.JACK));
+		boolean handBusted = BlackJackGame.isHandBust(jjjHand); 
+		
+		assertEquals(handBusted, true); 
+	}
 }
